@@ -1,0 +1,15 @@
+.header {
+    height: 60px;
+}
+
+.header-background {
+    width: fit-content;
+    margin: 30px auto;
+}
+
+main {
+    background-color: #cbd5e0;
+    height: 100vh;
+}
+
+
