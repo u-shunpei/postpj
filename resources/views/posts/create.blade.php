@@ -2,6 +2,15 @@
 @section('head')
 @endsection
 @section('content')
+    @if($errors->any())
+        <div class="error">
+            <ul>
+                @foreach($errors->all() as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form method="post" action="{{ route('posts.create') }}" enctype="multipart/form-data">
         @csrf
         <div class="form">

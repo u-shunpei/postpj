@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePost;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function create(Request $request)
+    public function create(CreatePost $request)
     {
         //Postモデルのインスタンスを作成する
         $post = new Post();
