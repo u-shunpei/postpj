@@ -4,8 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
 //投稿フォームページ
-Route::get('/post', [PostController::class, 'showCreateForm'])->name('posts.create');
-Route::post('/post', [PostController::class, 'create']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/post', [PostController::class, 'showCreateForm'])->name('posts.create');
+    Route::post('/post', [PostController::class, 'create']);
+});
+
 
 //投稿確認ページ
 Route::get('/post/{post}', [PostController::class, 'detail'])->name('posts.detail');
